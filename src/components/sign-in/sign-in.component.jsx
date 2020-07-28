@@ -25,6 +25,7 @@ class SignIn extends React.Component {
       this.setState({ email: "", password: "" });
     } catch (e) {
       console.error(e);
+      alert("Wrong Email or password");
     }
   };
 

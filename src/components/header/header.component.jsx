@@ -7,7 +7,10 @@ import { auth } from "../../firebase/firebase.utils";
 
 import "./header.styles.scss";
 
-function Header({ currentUser }) {
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
+function Header({ currentUser, hidden }) {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -21,7 +24,7 @@ function Header({ currentUser }) {
         <Link className="option" to="/contact">
           CONTACT
         </Link>
-        {currentUser!==null ? (
+        {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
           </div>
@@ -30,16 +33,16 @@ function Header({ currentUser }) {
             SIGN IN
           </Link>
         )}
-        <Link className="option" to="/shop">
-          cart
-        </Link>
+        <CartIcon />
       </div>
+      {hidden ? null : <CartDropdown />}
     </div>
   );
 }
 
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
+  hidden: state.cart.hidden,
 });
 
 export default connect(mapStateToProps)(Header);

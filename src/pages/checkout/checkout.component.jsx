@@ -5,7 +5,6 @@ import { createStructuredSelector } from "reselect";
 import "./checkout.styles.scss";
 
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
-import stripButton from "../../components/stripe-button/strip-button.component";
 import {
   selectCartItems,
   selectCartTotal,

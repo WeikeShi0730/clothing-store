@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -13,15 +13,12 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { checkUserSession } from "./redux/user/user.actions";
 
-class App extends React.Component {
-  unsubscribeFromAuth = null;
-
+const App = ({ checkUserSession, currentUser }) => {
+  /*Before:
   componentDidMount() {
-    const { checkUserSession } = this.props;
     checkUserSession();
 
-
-    /*Before:
+    
     const { setCurrentUser } = this.props;
      
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -35,37 +32,31 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuth);
-    }); */
-  }
+    }); 
+  }*/
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  useEffect(() => {
+    checkUserSession();
+  }, [checkUserSession]);
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route
-            exact
-            path="/signIn"
-            render={() =>
-              this.props.currentUser ? (
-                <Redirect to="/" />
-              ) : (
-                <SignInAndSignUpPage />
-              )
-            }
-          />
-          <Route exact path="/checkout" component={CheckoutPage} />
-        </Switch>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/shop" component={ShopPage} />
+        <Route
+          exact
+          path="/signIn"
+          render={() =>
+            currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
+          }
+        />
+        <Route exact path="/checkout" component={CheckoutPage} />
+      </Switch>
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => ({
   currentUser: selectCurrentUser(state),

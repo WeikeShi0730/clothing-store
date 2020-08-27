@@ -3,14 +3,14 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-  apiKey: "AIzaSyAKntCHcxboH9-hLHhPW5htHqTNzYKgtEg",
-  authDomain: "crwm-db-c7324.firebaseapp.com",
-  databaseURL: "https://crwm-db-c7324.firebaseio.com",
-  projectId: "crwm-db-c7324",
-  storageBucket: "crwm-db-c7324.appspot.com",
-  messagingSenderId: "36180049250",
-  appId: "1:36180049250:web:6c1b13c4a932b64adf403b",
-  measurementId: "G-3LYW4W6L7Y",
+  apiKey: "AIzaSyA_oW5tOG03POjPbzqb2Fd6fpmZsGxckTE",
+  authDomain: "f1-fanstores.firebaseapp.com",
+  databaseURL: "https://f1-fanstores.firebaseio.com",
+  projectId: "f1-fanstores",
+  storageBucket: "f1-fanstores.appspot.com",
+  messagingSenderId: "418393933049",
+  appId: "1:418393933049:web:ff39ebb833801f2f9a8e28",
+  measurementId: "G-B2MFE2BNNC",
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {

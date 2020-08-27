@@ -21,7 +21,7 @@ function Header({ currentUser, hidden, signOutStart }) {
     <HeaderContainer>
       <LogoContainer to="/">
         {/* <Logo className="logo" /> */}
-        <img className="logo" src={Logo} alt="Logo" />
+        <img src={Logo} alt="Logo" />
       </LogoContainer>
       <OptionsContainer>
         <OptionLink to="/shop">SHOP</OptionLink>

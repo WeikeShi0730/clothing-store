@@ -13,7 +13,6 @@ import {
 import ShopActionTypes from "./shop.type";
 
 export function* fetchCollectionsAsync() {
-  yield console.log("Im fired");
   try {
     const collectionRef = firestore.collection("collections");
     const snapshot = yield collectionRef.get();

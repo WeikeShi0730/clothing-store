@@ -8,13 +8,26 @@ import "./collections-overview.styles.scss";
 
 import CollectionPreview from "../collection-preview/collection-preview.component";
 
-const CollectionsOverview = ({ collections }) => (
-  <div className="collections-overview">
-    {collections.map(({ id, ...otherCollectionProps }) => (
-      <CollectionPreview key={id} {...otherCollectionProps} />
-    ))}
-  </div>
-);
+//import { addColletionAndDocuments } from "../../firebase/firebase.utils";
+
+const CollectionsOverview = ({ collections }) => {
+  /* //Adding new collections and documents
+  addColletionAndDocuments(
+    "collections",
+    collections.map(({ title, routeName, items }) => ({
+      title,
+      routeName,
+      items,
+    }))
+  ); */
+  return (
+    <div className="collections-overview">
+      {collections.map(({ id, ...otherCollectionProps }) => (
+        <CollectionPreview key={id} {...otherCollectionProps} />
+      ))}
+    </div>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   collections: selectCollectionsForPreview,

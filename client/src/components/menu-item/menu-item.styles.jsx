@@ -27,7 +27,7 @@ export const MenuItemContainer = styled.div`
   &:last-child {
     margin-left: 7.5px;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     height: 200px;
   }
 `;
@@ -41,8 +41,9 @@ export const BackgroundImageContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  height: 90px;
-  padding: 0 25px;
+  max-width: 25vw;
+  height: 100px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,6 +52,10 @@ export const ContentContainer = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
+  @media screen and (max-width: 1200px) {
+    width: 10ch;
+    max-width: unset;
+  }
 `;
 
 export const ContentTitle = styled.span`
@@ -58,9 +63,17 @@ export const ContentTitle = styled.span`
   margin-bottom: 6px;
   font-size: 22px;
   color: #4a4a4a;
+  text-align: center;
+  @media screen and (max-width: 1200px) {
+    font-size: 16px;
+  }
 `;
 
 export const ContentSubtitle = styled.span`
   font-weight: lighter;
   font-size: 16px;
+  text-align: center;
+  @media screen and (max-width: 1200px) {
+    font-size: 12px;
+  }
 `;

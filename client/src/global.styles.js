@@ -5,7 +5,7 @@ body {
     font-family: "formula1-display-regular";
     padding: 20px 40px;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1200px) {
         padding: 10px;
     }
   }

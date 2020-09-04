@@ -8,6 +8,8 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  margin: 1vh 0;
+  padding: 0 10px;
   &:hover {
     .image {
       opacity: 0.8;
@@ -17,7 +19,7 @@ export const CollectionItemContainer = styled.div`
       display: flex;
     }
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     width: 40vw;
     &:hover {
       .image {
@@ -36,18 +38,19 @@ export const AddButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     display: block;
     opacity: 0.9;
     min-width: unset;
-    padding: 0 10px;
+    padding: 0 5px;
   }
 `;
 
 export const BackgroundImage = styled.div`
   width: 100%;
-  height: 95%;
-  background-size: cover;
+  height: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 5px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
@@ -59,6 +62,9 @@ export const CollectionFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  @media screen and (max-width: 1200px) {
+    font-size: 14px;
+  }
 `;
 
 export const NameContainer = styled.span`

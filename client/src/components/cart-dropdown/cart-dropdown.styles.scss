@@ -19,10 +19,11 @@
     margin: 50px auto;
   }
   .cart-items {
+    padding-top: 25px;
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow: scroll;
   }
 
   button {

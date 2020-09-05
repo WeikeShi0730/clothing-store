@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const MenuItemContainer = styled.div`
-	height: ${({ size }) => (size ? '380px' : '240px')};
+  height: ${({ size }) => (size ? '380px' : '320px')};
+  
 	min-width: 30%;
 	overflow: hidden;
 	flex: 1 1 auto;
@@ -9,7 +10,7 @@ export const MenuItemContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	border: 1px solid black;
-	margin: 0 7.5px 15px;
+  margin: 0 7.5px 15px;
 	overflow: hidden;
 	&:hover {
 		cursor: pointer;
@@ -28,7 +29,7 @@ export const MenuItemContainer = styled.div`
     margin-left: 7.5px;
   }
   @media screen and (max-width: 1200px) {
-    height: 200px;
+    height: 250px;
   }
 `;
 

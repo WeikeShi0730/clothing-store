@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
   sections: [
     {
-      title: "Mercedes AMG Pertonas",
+      title: "Mercedes AMG Petronas",
       imageUrl: "https://i.ibb.co/Y3Wpg5v/mercedes.jpg",
       id: 1,
       linkUrl: "shop/mercedes",

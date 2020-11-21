@@ -48,7 +48,6 @@ const App = ({ checkUserSession, currentUser }) => {
     <div>
       <GlobalStyle />
       <Header />
-
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>

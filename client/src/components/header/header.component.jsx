@@ -11,7 +11,6 @@ import {
 
 import Logo from "../../assets/F1.svg.png";
 import CartIcon from "../cart-icon/cart-icon.component";
-import Sidebar from "../sidebar/sidebar.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 import { selectCartHidden } from "../../redux/cart/cart.selector";
@@ -34,7 +33,6 @@ function Header({ currentUser, hidden, signOutStart }) {
         ) : (
           <OptionLink to="/signIn">SIGN IN</OptionLink>
         )}
-        <Sidebar />
         <CartIcon />
       </OptionsContainer>
       {hidden ? null : <CartDropdown />}

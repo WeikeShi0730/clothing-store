@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
-const compression = require("compression");
-const enforce = require("express-sslify");
+//const compression = require("compression");
+//const enforce = require("express-sslify");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ entended: true }));
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
-  app.use(enforce.HTTPS({ trustProtoHeader: true }));
-  app.use(compression());
+  //app.use(enforce.HTTPS({ trustProtoHeader: true }));
+  //app.use(compression());
   app.use(express.static(path.join(__dirname, "client/build")));
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
@@ -41,7 +41,7 @@ app.post("/payment", (req, res) => {
     amount: req.body.amount,
     currency: "usd",
   };
-
+  console.log(res)
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
       res.status(500).send({ error: stripeErr });
